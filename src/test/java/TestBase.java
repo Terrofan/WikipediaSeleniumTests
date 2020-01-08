@@ -31,8 +31,9 @@ public class TestBase{
         driver.quit();
     }
 
-    public void openSite(String url) {
+    public void openSite(String url) throws InterruptedException {
         driver.get(url);
+        Thread.sleep(3000);
     }
 
     public void type(By locator, String text) {
@@ -41,8 +42,9 @@ public class TestBase{
         driver.findElement(locator).sendKeys(text);
     }
 
-    public void selectLang(String local) {
+    public void selectLang(String local) throws InterruptedException {
         driver.findElement(By.id("js-link-box-" + local)).click();
+        Thread.sleep(2000);
     }
 
     public void init_login() {
@@ -52,5 +54,14 @@ public class TestBase{
     public void fillLoginForm(String user, String password) {
         type(By.id("wpName1"), user);
         type(By.id("wpPassword1"), password);
+    }
+
+    public void returnBack() throws InterruptedException {
+        driver.navigate().back();
+        Thread.sleep(2000);
+    }
+
+    public void click(By locator) {
+        driver.findElement(locator).click();
     }
 }

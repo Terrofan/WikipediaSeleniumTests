@@ -6,7 +6,7 @@ public class Selectors extends TestBase {
     public void WikiElementsTest() throws InterruptedException {
         openSite("https://wikipedia.org/");
         selectLang("en");
-        driver.navigate().back();
+        returnBack();
         selectLang("ru");
     }
 
