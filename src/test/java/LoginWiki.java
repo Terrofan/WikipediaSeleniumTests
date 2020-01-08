@@ -8,7 +8,7 @@ public void openWikipediaTest() throws InterruptedException {
     selectLang("en");
     init_login();
     fillLoginForm("Nikita", "Shirman");
-    click(By.id("wpLoginAttempt"));
+    loginSubmit();
 }
 
 }

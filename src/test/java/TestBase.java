@@ -64,4 +64,8 @@ public class TestBase{
     public void click(By locator) {
         driver.findElement(locator).click();
     }
+
+    public void loginSubmit() {
+        click(By.id("wpLoginAttempt"));
+    }
 }
